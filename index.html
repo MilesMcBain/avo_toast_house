@@ -3,7 +3,7 @@
 <title>The Arrival of Web VR for Scientific Communication</title>
 <head>
     <script src="https://aframe.io/releases/0.7.0/aframe.min.js"></script>
-    <script src="//cdn.rawgit.com/donmccurdy/aframe-extras/v3.12.4/dist/aframe-extras.min.js"></script>
+    <script src="./grid.js"></script>
     <script src="//cdn.rawgit.com/donmccurdy/aframe-physics-system/v2.1.0/dist/aframe-physics-system.min.js"></script>
 </head>
 </head>
@@ -12,15 +12,15 @@
     <a-assets>
       <a-asset-item id="avo" src="./models/avocado/glTF/Avocado.gltf"></a-asset-item>
       <a-asset-item id="toast_gltf" src="./models/toast/gltf/toast.gltf"></a-asset-item>
-      <a-mixin id="avo" gltf-model="#avo" scale="5 5 5" rotation="0 180 0" dynamic-body="shape: box"></a-mixin>
+      <a-mixin id="avo" gltf-model="#avo" scale="10 10 10" rotation="0 180 0" dynamic-body="shape: box"></a-mixin>
       <a-mixin id="toast_gltf" gltf-model="#toast_gltf" scale="0.05 0.05 0.05" rotation="0 0 0" dynamic-body="shape: box"></a-mixin>
+      <a-mixin id="piping" material="color: #14dc2b; metalness: 0.35; roughness: 0.62" geometry="primitive: cylinder"></a-mixin>
     </a-assets>
     <a-camera wasd-controls="fly: true"></a-camera>
-    <a-box position="-1 0.5 -3" rotation="0 45 0" color="#4CC3D9"></a-box>
-    <a-sphere position="0 1.25 -5" radius="1.25" color="#EF2D5E"></a-sphere>
-    <a-cylinder position="1 0.75 -3" radius="0.5" height="1.5" color="#FFC65D"></a-cylinder>
-    <a-entity mixin="avo" position="0 5 -2"></a-entity>
-    <a-entity mixin="toast_gltf" position="0 1 -2"></a-entity>
+    <a-entity position="0 7 -3" mixin="piping" geometry="height: 6; radius: 1.25" ></a-entity>
+    <a-entity position="0 5 -3"  mixin="piping" geometry="height: 2; radius: 1.5"></a-entity>
+    <a-entity mixin="avo" position="0 5 -3"></a-entity>
+    <a-entity mixin="toast_gltf" position="0 1 -3"></a-entity>
     <a-grid static-body></a-grid>
     <a-sky color="#ECECEC"></a-sky>
 </a-scene>
